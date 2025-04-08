@@ -9,7 +9,7 @@ body{
     align-items: center;
     background-color: lightgray;
  }
- 
+
  h1.header{
    color: #025BDE;
  }
@@ -17,7 +17,7 @@ body{
  .container{
    display: flex;
    justify-content: center;
-   align-items: center;
+   align-content: baseline;
    width: 100%;
  }
 
@@ -25,8 +25,6 @@ body{
  table{
     margin-top: 5%;
     margin-bottom: 3%;
-    margin-left: auto;
-    margin-right: auto;
     justify-content: center;
     align-content: center;
  }
@@ -80,9 +78,23 @@ table tr td:first-child {
     justify-items: center;
  }
 
+ .content-aligner{
+    justify-content: center;
+    width: 20%;
+ }
+
  #notify{
-   float: right;
-   background-color: black;
-   color: white;
+    text-align: center;
+    color: #025BDE;
+    font-size: x-large;
+    vertical-align: middle;
+    width: 50vh;
+    height: 50vh;
+ }
+
+ #empty{
+    visibility: hidden;
+    background-color: black;
+    color: white;
    
  }

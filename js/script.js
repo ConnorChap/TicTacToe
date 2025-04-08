@@ -9,10 +9,12 @@ const gameBoardDefault = () => {
 const TicTacToe = {board: gameBoardDefault(), startGame: false, endGame: false, player: true}
 
 document.getElementById("start").addEventListener("click", startGame);
+document.getElementById("restart").addEventListener("click", restartGame);
 //document.getElementById("restart").addEventListener("click", restartGame);
 
 function startGame(){
     TicTacToe.board = gameBoardDefault();
+    document.getElementById('notify').textContent = '';
     TicTacToe.startGame = true;
     TicTacToe.endGame = false;
     TicTacToe.player = true;
@@ -39,6 +41,8 @@ function move(index){
     let winner = getWinner();
 
     if(winner !== 'none'){
+        let elem = document.getElementById("notify");
+        elem.textContent = winner == 'Cat' ? winner + ' Game!': winner + ' Wins!';
         TicTacToe.endGame = true;
     }
 }
@@ -73,7 +77,9 @@ function isWinner(player){
 }
 
 function restartGame(){
-
+    TicTacToe.board = gameBoardDefault;
+    renderBoard();
+    startGame();
 }
 
 
